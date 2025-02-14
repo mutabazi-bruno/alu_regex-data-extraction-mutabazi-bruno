@@ -25,9 +25,8 @@ The Python script applies specific regular expression patterns to identify and e
 1. Make sure you have Python installed.
 2. You can download it from the website or using microsoft store in windows
 3. I used python 3.11 
-4. Save the Python script as `regex_data_extraction.py`.
-5. Open a terminal in the script's directory.
-6. Run the script using:
+4. Open a terminal in the script's directory.
+5. Run the script using:
     ```bash
     python regex_data_extraction.py
     ```
@@ -36,9 +35,10 @@ The Python script applies specific regular expression patterns to identify and e
 ```
 Emails: ['user@example.com', 'firstname.lastname@company.co.uk']
 URLs: ['https://www.example.com', 'https://subdomain.example.org/page']
-Phone Numbers: ['(123) 456-7890', '123-456-7890', '123.456.7890']
-Credit Cards: ['1234 5678 9012 3456', '1234-5678-9012-3456']
-Times: ['14:30', '2:30', '02:30']
+Phone Numbers: ['(123) 456-7890', '123-456-7890']
+Hashtags: ['#example', '#ThisIsAHashtag']
+Currency Amounts: ['$19.99']
+Times: ['14:30']
 ```
 
 ## License

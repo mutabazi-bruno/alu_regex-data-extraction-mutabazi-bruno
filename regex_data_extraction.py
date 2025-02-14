@@ -1,28 +1,36 @@
 import re
 
-sample_text = """
-Emails: user@example.com, firstname.lastname@company.co.uk
-URLs: https://www.example.com, https://subdomain.example.org/page
-Phone Numbers: (123) 456-7890, 123-456-7890, 123.456.7890
-Credit Cards: 1234 5678 9012 3456, 1234-5678-9012-3456
-Times: 14:30, 2:30 PM, 02:30 am
-"""
+sample_text = '''
+user@example.com
+firstname.lastname@company.co.uk
+https://www.example.com
+https://subdomain.example.org/page
+(123) 456-7890
+123-456-7890
+#example
+#ThisIsAHashtag
+$19.99
+14:30
+'''
 
-patterns = {
-    "Emails": r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}",
-    "URLs": r"https?://(?:www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:/[\w./]*)?",
-    "Phone Numbers": r"\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}",
-    "Credit Cards": r"\b\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}\b",
-    "Times": r"\b(?:[01]?\d|2[0-3]):[0-5]\d\b|\b(?:1[0-2]|0?[1-9]):[0-5]\d\s?(?:AM|PM|am|pm)\b"
-}
+email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+url_pattern = r'https?://[a-zA-Z0-9./-]+'
+phone_pattern = r'(\(\d{3}\) \d{3}-\d{4}|\d{3}-\d{3}-\d{4})'
+hashtag_pattern = r'#\w+'
+currency_pattern = r'\$\d{1,3}(?:,\d{3})*(?:\.\d{2})?'
 
-def extract_data(text, patterns):
-    extracted_data = {}
-    for key, pattern in patterns.items():
-        matches = re.findall(pattern, text)
-        extracted_data[key] = matches
-    return extracted_data
+time_pattern = r'\b\d{1,2}:\d{2}(?:\s?[APMapm]{2})?\b'
 
-results = extract_data(sample_text, patterns)
-for category, matches in results.items():
-    print(f"{category}: {matches}")
+emails = re.findall(email_pattern, sample_text)
+urls = re.findall(url_pattern, sample_text)
+phone_numbers = re.findall(phone_pattern, sample_text)
+hashtags = re.findall(hashtag_pattern, sample_text)
+currency_amounts = re.findall(currency_pattern, sample_text)
+times = re.findall(time_pattern, sample_text)
+
+print("Emails:", emails)
+print("URLs:", urls)
+print("Phone Numbers:", phone_numbers)
+print("Hashtags:", hashtags)
+print("Currency Amounts:", currency_amounts)
+print("Times:", times)
