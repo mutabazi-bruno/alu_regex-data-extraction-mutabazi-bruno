@@ -1,4 +1,4 @@
-# Regex Data Extraction Project
+ Regex Data Extraction Project
 
 ## Project Overview
 This project demonstrates the use of Python's `re` module to extract various types of data from a given text input using regular expressions. The script processes a sample text to find and display occurrences of the following data types:
@@ -23,27 +23,23 @@ The Python script applies specific regular expression patterns to identify and e
 
 ## Running the Script
 1. Make sure you have Python installed.
-2. Save the Python script as `regex_data_extraction.py`.
-3. Open a terminal in the script's directory.
-4. Run the script using:
+2. You can download it from the website or using microsoft store in windows
+3. I used python 3.11 
+4. Save the Python script as `regex_data_extraction.py`.
+5. Open a terminal in the script's directory.
+6. Run the script using:
     ```bash
     python regex_data_extraction.py
     ```
 
-## Sample Output
+## This should be the Output
 ```
-Emails: ['user@example.com', 'firstname.lastname@company.co.uk', 'user+alias@domain.io']
+Emails: ['user@example.com', 'firstname.lastname@company.co.uk']
 URLs: ['https://www.example.com', 'https://subdomain.example.org/page']
-Phone Numbers: ['(123) 456-7890', '123-456-7890', '+1-123-456-7890']
-Hashtags: ['#example', '#ThisIsAHashtag']
-Currency Amounts: ['$19.99', '$1,234.56']
-Times: ['14:30', '2:30 PM']
+Phone Numbers: ['(123) 456-7890', '123-456-7890', '123.456.7890']
+Credit Cards: ['1234 5678 9012 3456', '1234-5678-9012-3456']
+Times: ['14:30', '2:30', '02:30']
 ```
-
-## Applications
-- Web scraping
-- Data validation in web forms
-- Log analysis
 
 ## License
 This project is open-source and free to use for educational and professional purposes.
